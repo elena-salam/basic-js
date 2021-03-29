@@ -280,7 +280,7 @@ describe('Carbon dating', () => {
 
     });
 
-    it.optional('should handle inadequate values', () => {
+    it.optional('should ha sampndle inadequate values', () => {
       assert.equal(dateSample('9000'), false);
       assert.equal(dateSample('15.1'), false);
       assert.equal(dateSample('0'), false);
