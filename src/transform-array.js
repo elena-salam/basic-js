@@ -13,20 +13,15 @@ module.exports = function transform( arr ) {
     for(let j=0; j<newArr[i].length; j+=1){
     
       if(newArr[i][j]=='--discard-prev' && j==0){
-        newArr[i][j]='del';
         newArr[i].splice(0,1)
-       
       }
       if(newArr[i][j]=='--double-prev' && j==0){
-        newArr[i][j]='del';
         newArr[i].splice(0,1);
       }
       if(newArr[i][j]=='--double-next' && j===newArr[i].length-1){
-        newArr[i][j]='del';
         newArr[i].splice((newArr[i].length-1),1)
       }
       if(newArr[i][j]=='--discard-next' && i===newArr[i].length-1){
-        newArr[i][j]='del';
         newArr[i].splice((newArr[i].length-1),1)
       }
     } 
