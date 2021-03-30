@@ -2,11 +2,15 @@ const CustomError = require("../extensions/custom-error");
 
 module.exports = function transform( arr ) {
   
-  let newArr = JSON.parse(JSON.stringify(arr))
+  let newArr = arr.filter(Boolean)
  
-  if(!Array.isArray(newArr) || newArr.length === 0){
+  if(!Array.isArray(newArr)){
     throw new Error('Error')
   }
+  if(newArr.length===0){
+    return []
+  }
+ 
   
   for(let i=0; i<newArr.length; i+=1){
    
